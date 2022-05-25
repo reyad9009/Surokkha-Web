@@ -26,18 +26,18 @@ nav{
     overflow: hidden;
     position: relative;
 }
-.nav-section{
+.nev-section-area{
     display: flex;
     align-items: center;
 }
-.nav-section ul{
+.nev-section-area ul{
     display: flex;
     margin-right: 12px;
 }
-.nav-section ul li{
+.nev-section-area ul li{
     list-style: none;
 }
-.nav-section ul li a{
+.nev-section-area ul li a{
     position: absolute;
     text-decoration: none;
     color: rgba(9,39,83,.7);
@@ -48,10 +48,10 @@ nav{
     padding: 33px 8px;
 }
 
-.nav-section ul li a:hover{
+.nev-section-area ul li a:hover{
     color: #092753;
 }
-.nav-section ul li:first-child a::after{
+.nev-section-area ul li:first-child a::after{
     position: absolute;
     background: rgba(9,39,83,.9);
     content: "";
@@ -61,7 +61,7 @@ nav{
     margin: auto;
     transition: .01s;
 }
-.nav-section ul li a::after{
+.nev-section-area ul li a::after{
     position: absolute;
     background: rgba(9,39,83,.9);
     content: "";
@@ -73,7 +73,7 @@ nav{
     height: 5px;
     transition: all 0.9s;
 }
-.nav-section ul li a:hover::after{
+.nev-section-area ul li a:hover::after{
     height: 5px;
     left: 0;
     right: 0;
@@ -92,6 +92,14 @@ button{
 }
 button:hover{
     background-color: tomato;
+}
+
+/**/
+.checkbtn{
+    display: none;
+}
+#check{
+    display: none;
 }
 /*********************** Header End ***********************/
 /*********************** Section1 Strt ***********************/
@@ -486,11 +494,10 @@ footer{
     width: 100%;
     display: grid;
     place-items: center;
- 
- 
 }
 .footer-area{
     display: flex;
+    flex-wrap: wrap;
     align-items: flex-start;
     justify-content: space-between;
     gap: 80px;
@@ -500,7 +507,6 @@ footer{
 .f-nav ul li{
     list-style: none;
     padding-bottom: 10px;
-    
 }
 .f-nav ul li a{
     text-decoration: none;
@@ -513,8 +519,70 @@ footer{
 }
 :is(.f-developed, .f-affiliates) p{
     font-size: 15px;
-    color: #fff;
     font-weight: 600;
+    color: #fff;
     margin-bottom: 10px;
 }
 /*********************** Footer End ***********************/
+
+
+
+@media (max-width: 991px){
+    .container{
+        width: 100%;
+        height: 130px;
+        flex-wrap: nowrap;
+        overflow: visible;
+        background-color: #fff;
+    }
+    .container img{
+        width: 300px;
+        margin-left: 30px;
+    }
+    .nev-section-area{
+        display: none;
+    }
+    .checkbtn{
+        display: block;
+        margin-right: 30px;
+    }
+    .checkbtn img{
+        width: 100px;
+        box-sizing: border-box;
+        padding: 10px 20px;
+        border: 1px solid rgba(97, 97, 97, 0.7);
+        border-radius: 5px;
+    }
+    .nev-section-area ul{
+        display: block;
+        margin-left: 30px;
+        margin-top: 10px;
+    }
+    .nev-section-area ul li{
+        margin-bottom: 20px;
+    }
+    #check:checked ~ .nev-section-area{
+        display: block;
+        position: absolute;
+        top: 130px;
+        left: 0;
+        width: 100%;
+        height: 525px;
+        background-color: rgb(253, 253, 253);
+        z-index: 2;
+    }
+    .nev-section-area ul li a{
+        font-size: 40px;
+    }
+    .nev-section-area ul li:first-child a::after{
+        content: none;
+    }
+    .nev-section-area ul li a::after{
+        content: none;
+    }
+    button{
+        font-size: 40px;
+        padding: 10px;
+        margin-left: 30px;
+    }
+}
