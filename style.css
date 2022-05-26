@@ -526,17 +526,19 @@ footer{
 /*********************** Footer End ***********************/
 
 
-
-@media (max-width: 991px){
+/***********************************************************
+                    Mobile screen only 
+***********************************************************/
+@media (max-width: 991.98px){
     .container{
         width: 100%;
-        height: 130px;
+        height: 180px;
         flex-wrap: nowrap;
         overflow: visible;
         background-color: #fff;
     }
     .container img{
-        width: 300px;
+        width: 350px;
         margin-left: 30px;
     }
     .nev-section-area{
@@ -547,11 +549,11 @@ footer{
         margin-right: 30px;
     }
     .checkbtn img{
-        width: 100px;
+        width: 130px;
         box-sizing: border-box;
-        padding: 10px 20px;
+        padding: 10px 25px;
         border: 1px solid rgba(97, 97, 97, 0.7);
-        border-radius: 5px;
+        border-radius: 10px;
     }
     .nev-section-area ul{
         display: block;
@@ -561,18 +563,22 @@ footer{
     .nev-section-area ul li{
         margin-bottom: 20px;
     }
+    .nev-section-area{
+        height: 0;
+        transition: .3s;
+    }
     #check:checked ~ .nev-section-area{
         display: block;
         position: absolute;
-        top: 130px;
+        top: 180px;
         left: 0;
         width: 100%;
-        height: 525px;
-        background-color: rgb(253, 253, 253);
+        height: 650px;
+        background-color: rgb(242, 242, 243);
         z-index: 2;
     }
     .nev-section-area ul li a{
-        font-size: 40px;
+        font-size: 50px;
     }
     .nev-section-area ul li:first-child a::after{
         content: none;
@@ -581,8 +587,9 @@ footer{
         content: none;
     }
     button{
-        font-size: 40px;
-        padding: 10px;
+        font-size: 50px;
+        padding: 20px 20px;
         margin-left: 30px;
+        border-radius: 10px;
     }
 }
