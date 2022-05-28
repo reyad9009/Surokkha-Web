@@ -102,7 +102,8 @@ button:hover{
     display: none;
 }
 /*********************** Header End ***********************/
-/*********************** Section1 Strt ***********************/
+
+/*********************** Section1 Start ***********************/
 .s1-container{
     width: 100%;
     background-color: #fff;
@@ -191,11 +192,7 @@ button:hover{
     margin-left: 10px;
     background-color: #fff;
 }
-.s1-bannar-single-card1,
-.s1-bannar-single-card2,
-.s1-bannar-single-card3,
-.s1-bannar-single-card4
-{
+.s1-bannar-single-cards{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -207,11 +204,7 @@ button:hover{
     transition: all .4s ease-in-out;
     position: relative;
 }
-:is(.s1-bannar-single-card1,
-    .s1-bannar-single-card2,
-    .s1-bannar-single-card3,
-    .s1-bannar-single-card4)::after
-{
+.s1-bannar-single-cards::after{
     content: '';
     position: absolute;
     left: 0;
@@ -223,35 +216,31 @@ button:hover{
     border-bottom-right-radius: 5px;
     border-top-right-radius: 5px;
 }
-.s1-bannar-single-card1:after
+.s1-b-s-card1:after
     { background-color: #0d7b2c; }
 
-.s1-bannar-single-card2:after
+.s1-b-s-card2:after
     { background-color: #d8de00; }
 
-.s1-bannar-single-card3:after
+.s1-b-s-card3:after
     { background-color: #25be88; }
 
-.s1-bannar-single-card4:after
+.s1-b-s-card4:after
     { background-color: #5fc6cc; }
 
-.s1-bannar-single-card1:hover
+.s1-b-s-card1:hover
     { background-color: #e9f2ff; }
 
-.s1-bannar-single-card2:hover
+.s1-b-s-card2:hover
     { background-color: #fdf2cc; }
 
-.s1-bannar-single-card3:hover
+.s1-b-s-card3:hover
     { background-color: #d7f7fc; }
 
-.s1-bannar-single-card4:hover
+.s1-b-s-card4:hover
     { background-color: #d5deff; }
 
-:is(.s1-bannar-single-card1, 
-    .s1-bannar-single-card2,
-    .s1-bannar-single-card3, 
-    .s1-bannar-single-card4) p
-{
+.s1-bannar-single-cards p{
     text-align: left;
     font-size: 22px;
     color: #092753;
@@ -271,6 +260,7 @@ button:hover{
     justify-content: space-between;
     margin-top: 95px;
     height: 100px;
+    height: auto;
     padding: 1rem 0rem;
     border-radius: 5px;
     background-color: #fff;
@@ -469,6 +459,9 @@ button:hover{
     margin-top: -40px;
     padding: 10px;
 }
+.app-store{
+    margin-bottom: 18px;
+}
 .s5-app h3{
     line-height: 10px;
 }
@@ -530,6 +523,7 @@ footer{
                     Mobile screen only 
 ***********************************************************/
 @media (max-width: 991.98px){
+
     /******************* Header Start *******************/
     .container{
         width: 100%;
@@ -540,7 +534,6 @@ footer{
         position: fixed;
         top: 0;
         z-index: 5;
-
     }
     .container img{
         width: 350px;
@@ -600,7 +593,7 @@ footer{
     }
     /******************* Header End *******************/
 
-    /******************* Section Start *******************/
+    /******************* Section1 Start *******************/
     .s1-container{
         background-image: url(img/banner.jpg);
         background-repeat: no-repeat;
@@ -614,12 +607,25 @@ footer{
         flex-direction: column;
         flex-grow: 1;
         justify-content: space-evenly;
-        margin-top: 100px;
-        margin-bottom: 100px;
         gap: 15px;
+        margin: 130px 0 130px 0;
+    }
+    .s1-banner-card1-left{
+        margin: 0px 40px 0 40px;
+    }
+    .s1-banner-card1-main{
+        height: auto;
+        border-radius: 15px;
+    }
+    .s1-banner-card1-main:after{
+        width: 80%;
+        height: 30px;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
     }
     .s1-banner-card1-top{
-        margin-top: 30px;
+        justify-content: center;
+        margin-top: 30px;  
     }
     .s1-banner-card1-top img{
         width: 170px;
@@ -630,9 +636,6 @@ footer{
         line-height: 70px;
         margin-left: 50px;
     }
-    .s1-banner-card1-top{
-        justify-content: center;
-    }
     .s1-h6-tag{
         font-size: 45px;
         margin-top: 30px;
@@ -641,68 +644,270 @@ footer{
         width: 550px;
         margin: 50px 0 60px 0;
     }
-    .s1-banner-card1-main{
-        height: auto;
-        border-radius: 15px;
-    }
-    .s1-banner-card1-left{
-        margin: 30px 40px 0 40px;
-    }
-    .s1-banner-card1-main:after{
-        width: 80%;
-        height: 20px;
-        border-top-left-radius: 15px;
-        border-top-right-radius: 15px;
-    }
     .s1-banner-card2-right{
         height: auto;
         gap: 30px;
         margin: 30px 40px 0 40px;
         background-color: transparent !important;
     }
-    :is(.s1-bannar-single-card1, 
-    .s1-bannar-single-card2,
-    .s1-bannar-single-card3, 
-    .s1-bannar-single-card4) img
-    {
+    .s1-bannar-single-cards{
+        gap: 100px;
+        width: 100%;
+        height: 250px;
+        border-radius: 15px;
+        background-color: #ffff;
+    }
+    .s1-bannar-single-cards::after {
+        height: 80%;
+        width: 30px;
+        border-bottom-right-radius: 15px;
+        border-top-right-radius: 15px;
+    }
+    .s1-bannar-single-cards img {
         width: 150px;
     }
-    :is(.s1-bannar-single-card1, 
-    .s1-bannar-single-card2,
-    .s1-bannar-single-card3, 
-    .s1-bannar-single-card4) p
-    {
+    .s1-bannar-single-cards p{
     text-align: left;
     font-size: 60px;
     color: #092753;
     }
-    .s1-bannar-single-card1,
-    .s1-bannar-single-card2,
-    .s1-bannar-single-card3,
-    .s1-bannar-single-card4
-    {
-    gap: 100px;
-    width: 100%;
-    height: 250px;
-    border-radius: 15px;
-    background-color: #ffff;
-    }
+    /******************* Section1 End *******************/
 
-    :is(.s1-bannar-single-card1,
-    .s1-bannar-single-card2,
-    .s1-bannar-single-card3,
-    .s1-bannar-single-card4)::after
-    {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-    height: 80%;
-    width: 20px;
-    border-bottom-right-radius: 15px;
-    border-top-right-radius: 15px;
+    /******************* Section2 Start *******************/
+    .s2-help-line-area{
+        display: flex;
+        flex-direction: column;
+        margin-top: 95px;
+        height: auto;
+        padding: 2rem 16rem 6rem 16rem;
+        border-radius: 15px;
+        gap: 50px;
     }
-    /******************* Section End *******************/
+    .s2-single-card, .s2-single-last-card{
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        padding: 10px 0px;
+        position: relative;
+    }
+    .s2-single-card::after{
+        content: none;
+    }
+    .s2-single-card::before{
+        content: '';
+        position: absolute;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        margin: auto;
+        width: 100%;
+        height: 1px;
+        background-color: #b0b0b0;
+    }
+    .s2-single-last-card:before{
+        content: '';
+        position: absolute;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        margin: auto;
+        width: 70%;
+        height: 1px;
+        background-color: #b0b0b0;
+    }
+    .s2-card-icon{
+        padding: 25px;
+    }
+    .s2-card-icon img{
+        width: 50px;
+    }
+    .s2-card-text{
+        font-size: 2.5rem;
+    }
+    .s2-card-number{
+        font-size: 2.5rem;
+    }
+    /******************* Section2 End *******************/
+
+    /******************* Section3 Start *******************/
+    .vaccine-process-area{
+        flex-direction: column;
+        max-width: 100%;
+        border-radius: 15px;
+        margin: 120px 40px 0 40px;
+        box-shadow: 0 4px 4px rgba(221, 222, 223, 0.7);
+        box-sizing: border-box;
+        padding-bottom: 100px;
+    }
+    .s3-top{
+        width: 90%;
+        margin-top: -12px;
+        margin-bottom: 40px;
+        position: relative;
+    }
+    .s3-top::after{
+        width: 10px;
+        height: 80%;
+    }
+    .s3-top h2{
+        font-size: 4rem;
+        margin-left: 25px;
+        line-height: 80px;
+    }
+    .s3-bottom{
+        flex-direction: column;
+        gap: 100px;
+        margin-top: 100px;
+    }
+    .online-registration{
+        text-align: center;
+        max-width: 630px;  
+    }
+    .online-registration img{
+        width: 250px;
+    }
+    .online-registration h3{
+        font-size: 3.5rem;
+        font-weight: bolder;
+        margin-top: 50px;
+        color: #212529;
+        font-weight: bolder;
+    }
+    .online-registration p{
+        font-size: 3rem;
+        font-weight: normal;
+        line-height: 60px;  
+        margin-top: 60px;
+    }
+    /******************* Section3 End *******************/
+
+    /******************* Section4 Start *******************/
+    .s4-surokkha-app-download{
+        flex-direction: column;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        margin-top: 150px;
+        gap: 10px;
+    }
+    .s4-surokkha-app-download h4{
+        color: #212529;
+        font-size: 3rem;
+        font-weight: bolder;
+    }
+    .s4-surokkha-app-download img{
+        width: 450px;
+    }
+    /******************* Section4 End *******************/
+
+    /******************* Section5 Start *******************/
+    .s5-apps-download-area{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        border-radius: 15px;
+        padding: 40px 150px;
+        box-shadow: 0 4px 4px rgba(221, 222, 223, 0.7);
+        margin-top: 150px;
+        padding-bottom: 100px;
+    }
+    .s5-header-text{
+        width: 100%;
+        margin-left: -170px;
+        position: relative;
+    }
+    .s5-header-text:after{
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        width: 8px;
+        height: 80%;
+        background-color:  #ff483c;
+    }
+    .s5-header-text h2{
+        text-align: left;
+        width: 100%;
+        font-size: 3.5rem;
+        font-weight: 500;
+        margin-left: 25px; 
+    }
+    .s5-apps-area{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 40px;
+    }
+    .s5-app{
+        text-align: center;
+        padding: 1.5rem 3rem;
+        margin-top: 85px;
+    }
+    .mujib-img{
+        max-width: 500px;
+        margin-top: -40px;
+        padding: 10px;
+    }
+    .google-app-store{
+        width: 450px;
+    }
+    .app-store{
+        margin-bottom: 25px;
+        width: 380px;
+    }
+    .s5-app a{
+        font-size: 2.5rem;
+    }
+    /******************* Section5 End *******************/
+
+    /******************* Footer Start *******************/
+    .f-container{
+        width: 100%;
+        display: flex;
+        place-content: left;
+    }
+    .footer-area{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: left;
+        gap: 80px;
+        margin: 45px 0 35px 0;
+        box-sizing: border-box;
+        padding-left: 70px;
+    
+    }
+    .footer-logo{
+        width: 350px;
+        margin-top: 100px;
+    }
+    .f-nav ul li{
+        list-style: none;
+        padding-bottom: 10px;
+    }
+    .f-nav ul li a{
+        text-decoration: none;
+        color: #fff;
+        font-size: 2.8rem;
+        font-weight: 600;
+    }
+    .f-nav a:hover{
+        text-decoration: underline;
+    }
+    :is(.f-developed, .f-affiliates) p{
+        font-size: 2.8rem;
+        font-weight: 600;
+        color: #fff;
+        margin-bottom: 10px;
+    }
+    :is(.f-developed, .f-affiliates) img{
+        width: 800px;
+    }
+    /******************* Footer End *******************/
 }
